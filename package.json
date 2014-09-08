@@ -7,7 +7,7 @@
 , "main": "./lib/mochy.js"
 , "engines": { "node": ">= 0.6.0 && < 0.13.0" }
 , "scripts": {
-    "test": "node ./test.js"
+    "test": "simpleunit ./test"
   }
 , "bin": {
     "mochy": "./bin/mochy"
