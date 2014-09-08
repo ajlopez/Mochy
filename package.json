@@ -1,0 +1,22 @@
+{ "name": "mochy"
+, "description": "Simple test framework for JavaScript/Node.js"
+, "keywords": [ "test", "javascript", "node", "framework" ]
+, "version": "0.0.1alpha"
+, "author": "Angel 'Java' Lopez <webmaster@ajlopez.com> (http://www.ajlopez.com)"
+, "repository": { "type": "git", "url": "git://github.com/ajlopez/Mochy.git" }
+, "main": "./lib/mochy.js"
+, "engines": { "node": ">= 0.6.0 && < 0.13.0" }
+, "scripts": {
+    "test": "node ./test.js"
+  }
+, "bin": {
+    "mochy": "./bin/mochy"
+  }
+  
+, "dependencies": {
+  }
+  
+, "devDependencies": {
+    "simpleunit": "0.0.5"
+  }
+}
