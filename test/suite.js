@@ -30,7 +30,7 @@ exports['Describe with it and run'] = function (test) {
     var value = 0;
     
     s.describe('my suite', function () {
-        it('my test', function (done) {
+        it('should run this function', function (done) {
             value++;
             done();
         });
@@ -41,6 +41,27 @@ exports['Describe with it and run'] = function (test) {
         test.equal(data, null);
         test.equal(value, 1);
         test.done();
+    });
+}
+
+exports['Describe with test and run'] = function (testobj) {
+    testobj.async();
+    
+    var s = suite();
+    var value = 0;
+    
+    s.describe('my suite', function () {
+        test('my test', function (done) {
+            value++;
+            done();
+        });
+    });
+    
+    s.run(function (err, data) {
+        testobj.equal(err, null);
+        testobj.equal(data, null);
+        testobj.equal(value, 1);
+        testobj.done();
     });
 }
 
