@@ -65,3 +65,30 @@ exports['Describe with test and run'] = function (testobj) {
     });
 }
 
+exports['Describe with two it and run'] = function (test) {
+    test.async();
+    
+    var s = suite();
+    var values = [];;
+    
+    s.describe('my suite', function () {
+        it('should run this function', function (done) {
+            values.push(1);
+            done();
+        });
+
+        it('should run this function too', function (done) {
+            values.push(2);
+            done();
+        });
+    });
+    
+    s.run(function (err, data) {
+        test.equal(err, null);
+        test.equal(data, null);
+        test.equal(values.length, 2);
+        test.equal(values[0], 1);
+        test.equal(values[1], 2);
+        test.done();
+    });
+}
