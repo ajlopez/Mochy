@@ -43,7 +43,7 @@ exports['Describe with it and run'] = function (test) {
         test.done();
     });
 }
-/*
+
 exports['Describe with before, it and run'] = function (test) {
     test.async();
     
@@ -54,6 +54,7 @@ exports['Describe with before, it and run'] = function (test) {
     s.describe('my suite', function () {
         before('before the run', function (done) {
             valbefore++;
+            done();
         });
         
         it('should run this function', function (done) {
@@ -70,7 +71,7 @@ exports['Describe with before, it and run'] = function (test) {
         test.done();
     });
 }
-*/
+
 exports['Describe with test and run'] = function (testobj) {
     testobj.async();
     
