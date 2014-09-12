@@ -43,7 +43,34 @@ exports['Describe with it and run'] = function (test) {
         test.done();
     });
 }
-
+/*
+exports['Describe with before, it and run'] = function (test) {
+    test.async();
+    
+    var s = suite();
+    var value = 0;
+    var valbefore = 0;
+    
+    s.describe('my suite', function () {
+        before('before the run', function (done) {
+            valbefore++;
+        });
+        
+        it('should run this function', function (done) {
+            value += valbefore;
+            done();
+        });
+    });
+    
+    s.run(function (err, data) {
+        test.equal(err, null);
+        test.equal(data, null);
+        test.equal(valbefore, 1);
+        test.equal(value, 1);
+        test.done();
+    });
+}
+*/
 exports['Describe with test and run'] = function (testobj) {
     testobj.async();
     
