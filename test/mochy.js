@@ -79,3 +79,32 @@ exports['run file'] = function (test) {
     });
 }
 
+exports['run file with listener'] = function (test) {
+    test.async();
+    
+    var events = [];
+    
+    var listener = {
+        suite: function (msg) { events.push(msg); },
+        step: function (msg) { events.push(msg); },
+        ok: function () { events.push("ok"); }
+    }
+ 
+    var filename = path.join(__dirname, "tests", "test02");
+    
+    mochy.runFile(filename, listener, function (err, data) {
+        test.equal(err, null);
+        test.equal(data, null);
+        
+        var mod = require('./tests/test02');
+        test.equal(mod.getValue(), 1);
+        
+        test.ok(events.length);
+        test.equal(events.length, 3);
+        test.equal(events[0], 'Suite One');
+        test.equal(events[1], 'Test One');
+        test.equal(events[2], 'ok');
+        
+        test.done();
+    });
+}
