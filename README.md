@@ -44,12 +44,12 @@ TBD
 
 ## Inception
 
-Inspired by [Mocha](http://visionmedia.github.io/mocha/), but simpler.
+Inspired by [Mocha](http://mochajs.org/), but simpler.
 
 ## Contribution
 
 Feel free to [file issues](https://github.com/ajlopez/Mochy) and submit
-[pull requests](https://github.com/ajlopez/Mochy/pulls) — contributions are
+[pull requests](https://github.com/ajlopez/Mochy/pulls) â€” contributions are
 welcome<
 
 If you submit a pull request, please be sure to add or update corresponding
